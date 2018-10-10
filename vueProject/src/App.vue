@@ -25,7 +25,9 @@ export default {
 
 <style>
 .btn-content {
-  position: flex;
-  botttom: 1.25rem;
+  position: fixed;
+  bottom: 1.25rem;
+  width: 100%;
+  text-align: center;
 }
 </style>
