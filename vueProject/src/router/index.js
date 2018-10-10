@@ -7,6 +7,7 @@ import Order from '@/components/Order'
 import Pcontent from '@/components/Pcontent'
 import Search from '@/components/Search'
 import Hot from '@/components/Hot'
+import Test from '@/components/Test'
 Vue.use(Router)
 
 export default new Router({
@@ -42,6 +43,10 @@ export default new Router({
       path: '/hot',
       name: 'hot',
       component: Hot
+    }, {
+      path: '/test',
+      name: 'test',
+      component: Test
     }
   ]
 })

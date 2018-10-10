@@ -6,7 +6,10 @@ module.exports = {
     "postcss-url": {},
     "postcss-aspect-ratio-mini": {},
     "postcss-write-svg": { utf8: false },
-    "postcss-cssnext": {},
+    "postcss-cssnext": {
+      browers: ['last 2 versions', '>5%'],
+      warnForDuplicates: false
+    },
     "postcss-px-to-viewport": {
       viewportWidth: 750,
       viewportHeight: 1334, // (Number) The height of the viewport. 
