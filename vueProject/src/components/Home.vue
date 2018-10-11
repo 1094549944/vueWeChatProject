@@ -19,7 +19,7 @@
            id="nav_cate"
            @click="asideDomInit()"
            @touchmove.prevent>
-        <img :src="image"
+        <img :src="image1"
              alt="菜单按钮">
 
       </div>
@@ -48,12 +48,22 @@
          @click.stop="asideDomInit()"
          @touchmove.prevent>
     </div>
+    <div id="footer_cart"
+         class="footer_cart">
+      <img :src="image2" />
+      <p>购物车</p>
+    </div>
+    <nav-footer></nav-footer>
   </div>
 </template>
 
 <script>
+import NavFooter from '../common/navFooter'
 export default {
   name: 'home',
+  components: {
+    NavFooter
+  },
   data () {
     return {
       listArray: [{
@@ -66,7 +76,8 @@ export default {
         image: require('../assets/images/sousuo.png'),
         name: '搜你喜欢'
       }],
-      image: require('../assets/images/nav.png'),
+      image1: require('../assets/images/nav.png'),
+      image2: require('../assets/images/cart.png'),
       list: [{
         title: '主食',
         id: '1',
@@ -229,6 +240,8 @@ export default {
   --num_50: 50px;
   --num_80: 80px;
   --num_100: 100px;
+  --num_120: 120px;
+  --num_140: 140px;
   --num_800: 800px;
 }
 .home-content {
@@ -340,7 +353,7 @@ export default {
   padding-top: var(--num_15);
 }
 
-/*透明层*/
+/* 透明层 */
 .bg {
   position: fixed;
   width: 100%;
@@ -350,5 +363,29 @@ export default {
   top: 0px;
   z-index: 1;
   display: none;
+}
+/* 购物车按钮 */
+.footer_cart {
+  height: var(--num_140);
+  width: var(--num_140);
+  background: red;
+  position: fixed;
+  color: #fff;
+  bottom: var(--num_20);
+  right: var(--num_20);
+
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.footer_cart img {
+  width: var(--num_50);
+  height: var(--num_50);
+  margin-top: var(--num_20);
+}
+.footer_cart p {
+  position: relative;
+  background: red;
+  padding-top: var(--num_20);
 }
 </style>
