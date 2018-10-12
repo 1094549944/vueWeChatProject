@@ -227,23 +227,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-:root {
-  --text_color: #333;
-  --bg_color: #eee;
-  --num_-100: -100px;
-  --num_-80: -80px;
-  --num_10: 10px;
-  --num_15: 15px;
-  --num_20: 20px;
-  --num_24: 24px;
-  --num_36: 36px;
-  --num_50: 50px;
-  --num_80: 80px;
-  --num_100: 100px;
-  --num_120: 120px;
-  --num_140: 140px;
-  --num_800: 800px;
-}
+@import '../assets/styles/common';
+
 .home-content {
   padding-top: var(--num_20);
   background: var(--bg_color);
@@ -259,10 +244,11 @@ export default {
   color: var(--text_color);
   background: #fff;
   border-radius: var(--num_10);
+  & div {
+    flex: 1;
+  }
 }
-.index_header div {
-  flex: 1;
-}
+
 .hairlines {
   border-right: 0.5px solid #eee;
 }
@@ -286,30 +272,31 @@ export default {
   display: flex;
   flex-wrap: wrap;
   padding-left: var(--num_20);
+  & li {
+    margin: var(--num_20) var(--num_20) var(--num_20) 0;
+    width: 223px;
+    overflow: hidden;
+    background: #fff;
+    padding-bottom: var(--num_20);
+    border-radius: var(--num_20/2);
+    font-size: var(--num_24);
+    color: var(--text_color);
+    & img {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+  & .inner p {
+    padding-top: var(--num_20);
+    padding-left: var(--num_20);
+  }
+  & .title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
-.item_list li {
-  margin: var(--num_20) var(--num_20) var(--num_20) 0;
-  width: 223px;
-  overflow: hidden;
-  background: #fff;
-  padding-bottom: var(--num_20);
-  border-radius: var(--num_20/2);
-  font-size: var(--num_24);
-  color: var(--text_color);
-}
-.item_list li img {
-  width: 100%;
-  overflow: hidden;
-}
-.item_list .inner p {
-  padding-top: var(--num_20);
-  padding-left: var(--num_20);
-}
-.item_list .title {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+
 /*侧边栏*/
 /*侧边栏*/
 .left_cate {
@@ -323,34 +310,34 @@ export default {
   background: var(--bg_color);
   top: 0px;
   left: 0px;
-}
-.left_cate ul {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  background: var(--bg_color);
-  overflow-y: scroll;
-}
-.left_cate ul li {
-  padding: var(--num_20);
-  line-height: var(--num_100);
-}
-.left_cate .nav_cate {
-  position: absolute;
-  right: var(--num_-80);
-  background: rgba(34, 20, 20, 0.6);
-  top: 42%;
-  width: var(--num_80);
-  height: var(--num_80);
-  text-align: center;
-  border-radius: 0 50% 50% 0;
-  z-index: 2;
-}
-.left_cate .nav_cate img {
-  width: var(--num_50);
-  height: var(--num_50);
-  padding-top: var(--num_15);
+  & ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: var(--bg_color);
+    overflow-y: scroll;
+    & li {
+      padding: var(--num_20);
+      line-height: var(--num_100);
+    }
+  }
+  & .nav_cate {
+    position: absolute;
+    right: var(--num_-80);
+    background: rgba(34, 20, 20, 0.6);
+    top: 42%;
+    width: var(--num_80);
+    height: var(--num_80);
+    text-align: center;
+    border-radius: 0 50% 50% 0;
+    z-index: 2;
+    & img {
+      width: var(--num_50);
+      height: var(--num_50);
+      padding-top: var(--num_15);
+    }
+  }
 }
 
 /* 透明层 */
@@ -373,19 +360,18 @@ export default {
   color: #fff;
   bottom: var(--num_20);
   right: var(--num_20);
-
   text-align: center;
   border-radius: 50%;
   overflow: hidden;
-}
-.footer_cart img {
-  width: var(--num_50);
-  height: var(--num_50);
-  margin-top: var(--num_20);
-}
-.footer_cart p {
-  position: relative;
-  background: red;
-  padding-top: var(--num_20);
+  & img {
+    width: var(--num_50);
+    height: var(--num_50);
+    margin-top: var(--num_20);
+  }
+  & p {
+    position: relative;
+    background: red;
+    padding-top: var(--num_20);
+  }
 }
 </style>

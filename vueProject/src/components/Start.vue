@@ -34,7 +34,6 @@ export default {
       for (let i = 1; i <= num; i++) {
         this.personArr.push(i)
       }
-      console.log(this.personArr)
     }
   },
   created () {
@@ -44,64 +43,67 @@ export default {
 </script>
 
 <style scoped lang="postcss">
-.start_content .start_header {
-  height: 79px;
-  line-height: 79px;
-  background: #000;
-  color: #fff;
-  width: 225px;
-  margin: 140px auto 0rem auto;
-  border-radius: 10px;
-  text-align: center;
-}
-.start_content .start_header img {
-  height: 60px;
-  line-height: 60px;
-  position: relative;
-}
-.start_content .notice {
-  color: red;
-  text-align: center;
-  margin: 40px 0;
-}
-.start_content .user_list {
-  display: flex;
-  flex-wrap: wrap;
-}
-.start_content .user_list li {
-  width: 25%;
-  padding: 20px;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.start_content .user_list li span {
-  display: block;
-  width: 100%;
-  padding: 25px 0;
-  text-align: center;
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+@import '../assets/styles/common';
+.start_content {
+  & .start_header {
+    height: var(--num_80);
+    line-height: var(--num_80);
+    background: var(--bg_color0);
+    color: #fff;
+    width: var(--num_260);
+    margin: var(--num_140) auto var(--num_60);
+    border-radius: var(--num_10);
+    text-align: center;
+    & img {
+      height: var(--num_60);
+      line-height: var(--num_60);
+      position: relative;
+    }
+  }
+  & .notice {
+    color: red;
+    text-align: center;
+    margin: var(--num_40) 0;
+  }
+  & .user_list {
+    display: flex;
+    flex-wrap: wrap;
+    & li {
+      width: 25%;
+      padding: var(--num_20);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    & span {
+      display: block;
+      width: 100%;
+      padding: var(--num_20) 0;
+      text-align: center;
+      background: #fff;
+      border-radius: var(--num_10);
+      border: 1px solid #ccc;
+    }
+  }
 }
 
 .start {
   position: fixed;
-  bottom: 250px;
+  bottom: var(--num_260);
   left: 50%;
-  margin-left: -70px;
-  width: 140px;
-  height: 140px;
+  margin-left: var(--num_-80);
+  width: var(--num_140);
+  height: var(--num_140);
   border-radius: 50%;
   background: red;
   color: #fff;
-}
-.start span {
-  display: block;
-  width: 70px;
-  margin: 0 auto;
-  position: relative;
-  text-align: center;
-  top: 40px;
-  line-height: 30px;
+  & span {
+    display: block;
+    width: var(--num_60);
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    top: var(--num_40);
+    line-height: var(--num_40);
+  }
 }
 </style>
